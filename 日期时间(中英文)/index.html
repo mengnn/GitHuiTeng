@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容国产浏览器的高速模式 -->
+    <meta name="renderer" content="webkit">
+<title>JS日历控件特效代码layDate</title>
+<link rel="stylesheet" href="laydate/need/laydate.css">
+<script src="laydate/laydate.js"></script>
+</head>
+<body>
+<div style="width:1300px; margin:100px auto;">
+   <!--  演示一：<input onClick="laydate()" width="200px"><br /><br /> -->
+    演示二：<input id="demo" class="laydate-icon">
+</div>
+<script>
+;!function(){
+laydate({
+   elem: '#demo',
+   format: 'YYYY/MM/DD hh:mm:ss', // 分隔符可以任意定义，该例子表示只显示年月
+   festival: true, //显示节日
+   start: '2014-6-15 23:00:00',
+   istime: true
+  //istoday: false
+   /*min: '2017-06-01', //-1代表昨天，-2代表前天，以此类推
+   max: '2017-06-10' //+1代表明天，+2代表后天，以此类推*/
+})
+}();
+</script>
+</body>
+</html>

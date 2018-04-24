@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function-text</title>
+</head>
+<body>
+    <!-- 1. Define some markup -->
+    <button class="btn">Copy</button>
+    <div id="c">我是要被复制的内容</div>
+    <input type="text" name="" value="www.baidu.com" id="input">
+      <button class="btn2">Copy2</button>
+    <input type="text" name="" value="12345667" id="input2">
+    <button class="copy3">复制</button>
+    <input type="text" name="" value="123123123123123123" class="input3">
+
+
+
+
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script>
+    var c = document.getElementById("c");
+    var s=c.innerHTML;
+    var input=$("#input").val();
+    var input2=$("#input2").val();
+    var clipboard = new Clipboard('.btn', {
+        text: function() {
+            return input;
+        }
+    });
+    clipboard.on('success', function(e) {
+        alert("复制成功");
+    });
+    clipboard.on('error', function(e) {
+        alert("浏览器版本不支持，请尝试Ctrl+v 粘贴复制");
+    });
+    var clipboard2 = new Clipboard('.btn2', {
+        text: function() {
+            return input2;
+        }
+    });
+    clipboard2.on('success', function(e) {
+        alert("复制成功");
+    });
+    clipboard2.on('error', function(e) {
+        alert("浏览器版本不支持，请尝试Ctrl+v 粘贴复制");
+    });
+    var input3=$(".input3").val();
+    var clipboard3=new Clipboard('.copy3',{
+        text:function(){
+            return input3;
+        },
+        success:function(){
+          alert("复制成功");
+        },
+        error:function(){
+            alert("浏览器版本不支持，请尝试Ctrl+v 粘贴复制");
+        }
+    })
+     clipboard3.on('success', function(e) {
+        alert("复制成功");
+    });
+    clipboard3.on('error', function(e) {
+        alert("浏览器版本不支持，请尝试Ctrl+v 粘贴复制");
+    });
+</script>
+</body>
+</html>

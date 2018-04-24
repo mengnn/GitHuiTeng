@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>开关按钮</title>
+    <!-- 设置 viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容国产浏览器的高速模式 -->
+    <meta name="renderer" content="webkit">
+    <meta name="Author" content="Nicholas.meng" />
+    <meta name="Keywords" content="会腾软件" />
+    <meta name="Description" content="会腾定制" />
+    <link rel="stylesheet" href="css/checked_box.css"/>
+
+  <style type="text/css">
+  li{
+    list-style:none;
+  }
+    .checkbox{
+     width:100%;
+    }
+    /*开关1*/
+    .childs_reset {
+        width: 56px;
+        height: 25px;
+        background: #4078CB;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+        margin: 17px 0px;
+        float: right;
+        color: #fff;
+        line-height: 25px;
+        font-size: 14px;
+    }
+    .childs_reset span {
+        width: 29px;
+        height: 23px;
+        background: #fff;
+        border-radius: 5px 5px 5px 5px;
+        position: absolute;
+        right: -1px;
+        top: 0px;
+        border: 1px solid #ccc;
+    }
+    .project_bg {
+        background: #ccc;
+        margin: 17px 0;
+    }
+    .project_bg span {
+        right: auto;
+        left: 0px;
+        background: #fff;
+        border-radius: 5px 5px 5px 5px;
+        border: 1px solid #ccc;
+    }
+    /*开关2*/
+    .project_reset {
+        width: 50px;
+        height: 20px;
+        background: #fff;
+        border-radius: 15px;
+        position: relative;
+        cursor: pointer;
+        margin-top: 5px;
+        display: inline-block;
+    }
+    .project_reset span {
+        width: 50px;
+        height: 20px;
+        background: #ccc;
+        border-radius:15px;
+        position: absolute;
+        right: -1px;
+        top: 0px;
+    }
+    .switch_primary span {
+      right:auto;
+      left: 0px;
+      background:#7EE814;
+     border-radius: 15px;
+    }
+    .on_style{
+      position: absolute;
+      top: 3.5px;
+      left: 5px;
+      z-index: 111;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .off_style{
+      position: absolute;
+      top: 3.5px;
+      right: 5px;
+      z-index: 111;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- 样式1 -->
+  <div class="childs_reset" style="padding:0 3px;font-size: 12px;">
+      激活&nbsp;&nbsp;关闭
+      <span class="dot"></span>
+  </div>
+<!-- 样式2 -->
+<div style="padding-top: 30px;width: 50%;">
+  <span style="margin-top: 11px;float: left;">当前状态：开启签到</span>
+  <div class="childs_reset " style="padding:0 3px;">
+      on&nbsp;&nbsp;&nbsp;off
+      <span class="dot"></span>
+  </div>
+</div>
+<!-- 开关2 -->
+<ul class="child_project" style="margin-top: 50px;">
+  <li>
+    <span class="project_name">允许参会欠款签到</span>
+    <div class="project_reset " onclick="projectSwitch(this,'')">
+      <i class="on_left on_style"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="off_right"></i>
+      <span class="dot"></span>
+    </div>
+  </li>
+  <li>
+    <div class="project_reset" onclick="projectSwitch(this,'')">
+      <i class="on_left on_style"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="off_right"></i>
+      <span class="dot"></span>
+    </div>
+  </li>
+</ul>
+
+
+<script src="js/jquery.js"></script>
+<script>
+
+/* 开启状态 开关按钮*/
+$(".childs_reset").on('click',function(){
+    $(this).toggleClass("project_bg");
+})
+
+/*控制开关按钮2*/
+function projectSwitch(obj1,obj2){
+  $(obj1).toggleClass("switch_primary");
+  var clazz = $(obj1).attr("class");  //判断是否含有class名switch_primary
+  if(clazz.indexOf("switch_primary")>-1){
+     //obj2.show();
+     $(obj1).find(".on_left").removeClass("on_style");
+     $(obj1).find(".off_right").addClass("off_style");
+  }else {
+     //obj2.hide();
+     $(obj1).find(".on_left").addClass("on_style");
+     $(obj1).find(".off_right").removeClass("off_style");
+  };
+};
+</script>
+</body>
+</html>

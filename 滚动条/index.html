@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>几种横向滚动条样式</title>
+    <!-- 设置 viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 兼容国产浏览器的高速模式 -->
+    <meta name="renderer" content="webkit">
+    <meta name="Author" content="Nicholas.meng" />
+    <meta name="Keywords" content="会腾软件" />
+    <meta name="Description" content="会腾定制" />
+    <link rel="stylesheet" href="css/checked_box.css"/>
+
+  <style type="text/css">
+  .srcoll_one,.srcoll_two,.srcoll_three,.srcoll_four,.srcoll_five,.srcoll_six,
+  .srcoll_seven,.srcoll_eight,.srcoll_nine,.srcoll_ten,.srcoll_eleven,.srcoll_twelve,
+  .srcoll_thirteen,.srcoll_fourteen{
+    height:200px;
+    width:10px;
+    overflow-y: scroll;
+    margin:40px;
+    display: inline-block;
+  }
+  .item{
+    height:220px;
+  }
+  /* 样式1 */
+  .srcoll_one::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  }
+  .srcoll_one::-webkit-scrollbar{
+  width: 12px;
+  background-color: #F5F5F5;
+  }
+  .srcoll_one::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #4078cb;
+  }
+  /* 样式2 */
+.srcoll_two::-webkit-scrollbar-track
+{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+background-color: #F5F5F5;
+border-radius: 10px;
+}
+.srcoll_two::-webkit-scrollbar
+{
+width: 10px;
+background-color: #F5F5F5;
+}
+.srcoll_two::-webkit-scrollbar-thumb
+{
+border-radius: 10px;
+background-color: #FFF;
+background-image: -webkit-linear-gradient(top,
+#e4f5fc 0%,
+#bfe8f9 50%,
+#9fd8ef 51%,
+#2ab0ed 100%);
+}
+/* 样式3 */
+.srcoll_three::-webkit-scrollbar-track{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+background-color: #F5F5F5;
+border-radius: 10px;
+}
+.srcoll_three::-webkit-scrollbar{
+width: 10px;
+background-color: #F5F5F5;
+}
+.srcoll_three::-webkit-scrollbar-thumb{
+border-radius: 10px;
+background-color: #FFF;
+background-image: -webkit-gradient(linear,
+40% 0%,
+75% 84%,
+from(#4D9C41),
+to(#19911D),
+color-stop(.6,#54DE5D))
+}
+  </style>
+</head>
+<body>
+   <h2>几种横向滚动条样式</h2>
+   <div class="srcoll_one">
+       <div class="item"></div>
+   </div>
+   <div class="srcoll_two">
+         <div class="item"></div>
+     </div>
+     <div class="srcoll_three">
+         <div class="item"></div>
+     </div>
+     <div class="srcoll_four">
+         <div class="item"></div>
+     </div>
+
+
+</body>
+</html>
